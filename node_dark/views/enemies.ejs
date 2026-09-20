@@ -1,0 +1,145 @@
+<body class="pagina-interna">
+
+  <%- include("partials/header.ejs") %>
+  <%- include("partials/navbar.ejs") %>
+
+  <main>
+
+    <section class="cabecalho-pagina inimigos-banner">
+      <span class="eyebrow">BESTIÁRIO DE LORDRAN</span>
+
+      <h1>Inimigos e Chefes</h1>
+
+      <p>
+        Conheça os principais inimigos e chefes encontrados durante a jornada
+        por Dark Souls.
+      </p>
+    </section>
+
+    <section class="inimigos-conteudo">
+      <div class="secao-introducao">
+        <span class="eyebrow">DESAFIOS DE LORDRAN</span>
+        <h2>Adversários memoráveis</h2>
+        <p>
+          Cada inimigo possui características, estratégias e histórias próprias,
+          tornando cada batalha uma experiência única.
+        </p>
+      </div>
+
+      <div class="mapas-grid inimigos-grid">
+
+        <% const inimigos = [
+          {
+            nome: "Asylum Demon",
+            imagem: "AsylumDemon.webp",
+            categoria: "Chefe inicial",
+            descricao: "Primeiro chefe do jogo, responsável por ensinar as mecânicas básicas de combate."
+          },
+          {
+            nome: "Taurus Demon",
+            imagem: "TaurusDemon.jpg",
+            categoria: "Undead Burg",
+            descricao: "Guardião da ponte que força o jogador a utilizar o ambiente durante a batalha."
+          },
+          {
+            nome: "Bell Gargoyles",
+            imagem: "BellGargoyles.jpeg",
+            categoria: "Catedral",
+            descricao: "Dupla de gárgulas que protege o primeiro sino de despertar."
+          },
+          {
+            nome: "Capra Demon",
+            imagem: "CapraDemon.webp",
+            categoria: "Lower Undead Burg",
+            descricao: "Chefe enfrentado em uma arena pequena acompanhado por dois cães demoníacos."
+          },
+          {
+            nome: "Gaping Dragon",
+            imagem: "gaping.webp",
+            categoria: "The Depths",
+            descricao: "Um dragão deformado que representa o lado grotesco e sombrio de Lordran."
+          },
+          {
+            nome: "Chaos Witch Quelaag",
+            imagem: "Quelaag.jpg",
+            categoria: "Blighttown",
+            descricao: "Bruxa metade aranha e guardiã do segundo sino do despertar."
+          },
+          {
+            nome: "Iron Golem",
+            imagem: "Iron.jpg",
+            categoria: "Sen's Fortress",
+            descricao: "Gigante de ferro que protege a entrada para a cidade de Anor Londo."
+          },
+          {
+            nome: "Ornstein and Smough",
+            imagem: "Ornstein.avif",
+            categoria: "Anor Londo",
+            descricao: "Dupla lendária que combina velocidade, força e diferentes estilos de combate."
+          },
+          {
+            nome: "Seath the Scaleless",
+            imagem: "Seath.jpg",
+            categoria: "Crystal Cave",
+            descricao: "Dragão sem escamas e traidor de sua própria espécie."
+          },
+          {
+            nome: "Gravelord Nito",
+            imagem: "Nito.webp",
+            categoria: "Tomb of the Giants",
+            descricao: "Senhor da Morte, protegido por uma horda de esqueletos."
+          },
+          {
+            nome: "Four Kings",
+            imagem: "Four.jpg",
+            categoria: "New Londo Ruins",
+            descricao: "Chefes múltiplos enfrentados em uma arena escura e sem limites visíveis."
+          },
+          {
+            nome: "Bed of Chaos",
+            imagem: "Chaos.webp",
+            categoria: "Lost Izalith",
+            descricao: "Um encontro baseado em exploração e obstáculos, mais próximo de um quebra-cabeça."
+          },
+          {
+            nome: "Gwyn, Lord of Cinder",
+            imagem: "Gwyn.webp",
+            categoria: "Kiln of the First Flame",
+            descricao: "Último chefe do jogo e símbolo do fim da Era do Fogo."
+          }
+        ]; %>
+
+        <% inimigos.forEach((inimigo) => { %>
+          <article class="mapa-card inimigo-card">
+
+            <div class="imagem-inimigo">
+              <img
+                src="/images/<%= inimigo.imagem %>"
+                alt="<%= inimigo.nome %>"
+                loading="lazy"
+              >
+
+              <span class="selo-inimigo">
+                <%= inimigo.categoria %>
+              </span>
+            </div>
+
+            <div>
+              <span class="card-numero">INIMIGO / CHEFE</span>
+
+              <h2><%= inimigo.nome %></h2>
+
+              <p><%= inimigo.descricao %></p>
+            </div>
+
+          </article>
+        <% }); %>
+
+      </div>
+    </section>
+
+  </main>
+
+  <%- include("partials/footer.ejs") %>
+
+</body>
